@@ -1,0 +1,28 @@
+[
+  {
+    "nome": "Administrador",
+    "email": "admin@materialatipico.com",
+    "senha": "admin123",
+    "tipo": "Admin",
+    "biografia": "Conta de administração da plataforma.",
+    "criadoEm": "2026-11-23T20:10:00.000Z",
+    "notificacoes": {
+      "materialAprovado": true,
+      "novasAvaliacoes": true,
+      "newsletter": false
+    }
+  },
+  {
+    "nome": "Maria Silva",
+    "email": "maria.silva@email.com",
+    "senha": "senha123",
+    "tipo": "Educador",
+    "biografia": "",
+    "criadoEm": "2026-11-23T20:10:00.000Z",
+    "notificacoes": {
+      "materialAprovado": true,
+      "novasAvaliacoes": true,
+      "newsletter": false
+    }
+  }
+]

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contato – MaterialAtípico</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Lato:wght@400;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/home-logado.css" />
+    <link rel="stylesheet" href="../css/contato.css" />
+</head>
+
+<body>
+
+    <main class="sobremain">
+        <input type="checkbox" id="sidebar-toggle" hidden />
+        <input type="checkbox" id="search-toggle" hidden />
+        <label class="search-overlay" for="search-toggle" aria-hidden="true"></label>
+        <input type="checkbox" id="avatar-toggle" hidden />
+        <label class="avatar-overlay" for="avatar-toggle" aria-hidden="true"></label>
+        <label class="sidebar-overlay" for="sidebar-toggle" aria-hidden="true"></label>
+
+        <!-- ── HEADER LOGADO (sidebar + avatar) — só aparece com sessão ativa ── -->
+            <aside class="sidebar" id="sidebar-logado" style="display:none">
+                <div class="sidebar-header">
+                    <span class="sidebar-title">Menu</span>
+                    <label class="sidebar-close" for="sidebar-toggle" aria-label="Fechar menu">
+                        <i class="fa-solid fa-xmark"></i>
+                    </label>
+                </div>
+                <nav class="sidebar-nav">
+                    <a href="home-logado.html" class="sidebar-item">
+                        <span class="item-icon"><i class="fa-solid fa-house"></i></span>
+                        Home
+                    </a>
+                    <a href="material.html" class="sidebar-item">
+                        <span class="item-icon"><i class="fa-regular fa-eye"></i></span>
+                        Materiais
+                    </a>
+                    <a href="criar.html" class="sidebar-item">
+                        <span class="item-icon"><i class="fa-solid fa-arrow-up-from-bracket"></i></span>
+                        Criar
+                    </a>
+                    <a href="meus-materiais.html" class="sidebar-item">
+                        <span class="item-icon"><i class="fa-regular fa-user"></i></span>
+                        Perfil
+                    </a>
+                    <a href="admin.html" id="sidebar-admin-link" class="sidebar-item">
+                        <span class="item-icon"><i class="fa-solid fa-user-tie"></i></span>
+                        Admin
+                    </a>
+                    <a href="sobre.html" class="sidebar-item">
+                        <span class="item-icon"><i class="fa-solid fa-circle-info"></i></span>
+                        Sobre nós
+                    </a>
+                    <a href="contato.html" class="sidebar-item active">
+                        <span class="item-icon"><i class="fa-regular fa-envelope"></i></span>
+                        Contato
+                    </a>
+                </nav>
+                <div class="sidebar-footer">
+                    <button class="sidebar-logged-btn">
+                        <i class="fa-solid fa-circle-check"></i>
+                        Logado
+                    </button>
+                    <div class="sidebar-status-box">
+                        <div class="sidebar-status-label">Status Atual:</div>
+                        <div class="sidebar-status-value">CONTATO</div>
+                    </div>
+                </div>
+            </aside>
+
+            <nav id="nav-logado" style="display:none">
+                <div class="nav-left">
+                    <label class="nav-hamburger" for="sidebar-toggle" aria-label="Abrir menu">
+                        <i class="fa-solid fa-bars"></i>
+                    </label>
+                    <a class="nav-logo" href="home-logado.html">
+                        <div class="nav-logo-icon">M</div>
+                        MaterialAtípico
+                    </a>
+                </div>
+                <div class="nav-right">
+                    <div class="avatar-menu-wrap">
+                        <label class="nav-avatar-btn" for="avatar-toggle" aria-label="Perfil">
+                            <i class="fa-solid fa-user"></i>
+                        </label>
+                        <div class="avatar-dropdown">
+                            <div class="avatar-dropdown-name" id="nav-usuario-nome"></div>
+                            <a href="meus-materiais.html" class="avatar-dropdown-item">
+                                <i class="fa-regular fa-user"></i>
+                                Ver perfil
+                            </a>
+                            <a href="configuracoes.html" class="avatar-dropdown-item">
+                                <i class="fa-solid fa-gear"></i>
+                                Configurações
+                            </a>
+                            <div class="avatar-dropdown-divider"></div>
+                            <a href="login.html" class="avatar-dropdown-item avatar-dropdown-item--danger">
+                                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                Sair
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+        <!-- ── HEADER PÚBLICO — só aparece sem sessão ativa ── -->
+        <nav id="nav-publico">
+            <a class="nav-logo" href="/index.html">
+                <div class="nav-logo-icon">M</div>
+                MaterialAtípico
+            </a>
+            <ul class="nav-links">
+            <li><a href="/index.html">Início</a></li>
+            <li><a href="sobre.html">Sobre nós</a></li>
+            <li><a href="contato.html">Contato</a></li>
+            </ul>
+            <div class="nav-right">
+                <div class="nav-search-wrap">
+                    <div class="nav-search-bar">
+                        <i class="fa-solid fa-magnifying-glass nav-search-icon"></i>
+                        <input class="nav-search-input" type="text" placeholder="Buscar materiais..." />
+                        <label class="nav-search-close" for="search-toggle" aria-label="Fechar busca">
+                            <i class="fa-solid fa-xmark"></i>
+                        </label>
+                    </div>
+                    <label class="nav-search-btn-label" for="search-toggle" aria-label="Buscar">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </label>
+                </div>
+                <a class="btn-login" href="login.html">Login / Cadastro</a>
+            </div>
+        </nav>
+
+
+            <main class="container">
+
+        <a href="/index.html" data-home-link><button type="button" class="botaoVoltar">← Voltar</button></a>
+
+        <header class="header">
+            <h1>Entre em Contato</h1>
+            <p>
+                Estamos aqui para ajudar! Envie sua mensagem ou dúvida.
+            </p>
+        </header>
+
+        <section class="contatoCards">      
+            <article class="contatoCard">
+                <div class="iconeCard">✉</div>
+                    <h3>Email</h3>
+                    <a href="mailto:contato@materialtipico.com.br">
+                        contato@materialtipico.com.br
+                    </a>
+                    <small>Respondemos em até 24h</small>
+            </article>
+
+            <article class="contatoCard">
+                <div class="iconeCard">☎</div>
+                    <h3>Telefone</h3>
+                    <a href="tel:+5511987654321">
+                        +55 (31) 93892-8304
+                    </a>
+                    <small>Seg-Sex: 9h às 18h</small>
+            </article>
+
+            <article class="contatoCard">
+                <div class="iconeCard">📍</div>
+                    <h3>Endereço</h3>
+                    <span>Belo Horizonte, MG</span>
+                    <small>Brasil</small>
+            </article>
+
+        </section>
+
+        <section class="contentGrid">
+            <article class="card">        
+                <header class="titulo">
+                    <div class="iconeMsg"><i class="fa-regular fa-message"></i></div>
+                        <h2>Envie sua Mensagem</h2>
+                </header>
+
+                <p class="subtitulo">
+                Preencha o formulário abaixo
+                </p>
+
+                <form id="form-contato" action="/enviar" method="post">
+                    <div class="formGrupo">
+                        <label for="nome">Nome Completo</label>
+                        <input id="nome" name="nome" type="text" placeholder="Seu nome" required>
+                    </div>
+
+                    <div class="formGrupo">
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" placeholder="seu@email.com" required>
+                    </div>
+
+                    <div class="formGrupo">
+                        <label for="assunto">Assunto</label>
+                        <select id="assunto" name="assunto">
+                            <option>Selecione um assunto</option>
+                            <option>Dúvida</option>
+                            <option>Sugestão</option>
+                            <option>Problema Técnico</option>
+                            <option>Parceria</option>
+                            <option>Outro</option>
+                        </select>
+                    </div>
+
+                    <div class="formGrupo">
+                        <label for="mensagem">Mensagem</label>
+                        <textarea id="mensagem" name="mensagem" placeholder="Escreva sua mensagem aqui..." required></textarea>
+                    </div>
+
+                    <p id="msg-contato" hidden></p>
+
+                    <button type="submit" class="botaoMsg">
+                        ✈ Enviar Mensagem
+                    </button>
+
+                </form>
+    
+            </article>
+
+            <aside>
+                <h2 class="duvTitulo">
+                    Perguntas Frequentes
+                </h2>
+
+                <div class="duvLista">
+                    <article class="duvItem">
+                        <h4>Como posso contribuir com materiais?</h4>
+                        <p>
+                            Basta criar uma conta gratuita e acessar a seção
+                            “Criar Material”. Seus materiais serão analisados
+                            antes da publicação.
+                        </p>
+                    </article>
+
+                    <article class="duvItem">
+                        <h4>Os materiais são gratuitos?</h4>
+                        <p>
+                            Sim! Todos os materiais na plataforma são
+                            compartilhados gratuitamente pela comunidade.
+                        </p>
+                    </article>
+
+                    <article class="duvItem">
+                        <h4>Como funciona a moderação?</h4>
+                        <p>
+                            Nossa equipe analisa todos os materiais enviados
+                            para garantir qualidade e adequação pedagógica.
+                        </p>
+                    </article>
+
+                    <!-- <article class="duvItem helpBox">
+                        <h4>Precisa de Ajuda?</h4>
+                        <p>
+                            Se você encontrou um problema técnico ou precisa
+                            de suporte, acesse nossa central de ajuda.
+                        </p>
+                        <a href="/ajuda" class="botaoAjuda">
+                            Central de Ajuda
+                        </a>
+
+                    </article> -->
+            
+                </div>
+              
+            </aside>
+        
+        </section>
+    
+        <footer class="redesSociais">
+            <h2>Acompanhe-nos em nossos perfis no GitHub</h2>
+            <p>
+                Acompanhe novidades, dicas e conteúdos exclusivos
+            </p>
+
+            <div class="redesIcon">
+                <a href="https://github.com/lucasstefanon" target="_blank" aria-label="Lucas Stefanon no GitHub">
+                    <img src="../images/github.png" alt="GitHub" class="github-icon"> Lucas Stefanon
+                </a>
+                <a href="https://github.com/AmandaJeni" target="_blank" aria-label="Amanda Jeni no GitHub">
+                    <img src="../images/github.png" alt="GitHub" class="github-icon"> Amanda Jeni
+                </a>
+                <a href="https://github.com/nayarafonseca-1649780" target="_blank" aria-label="Nayara Fonseca no GitHub">
+                    <img src="../images/github.png" alt="GitHub" class="github-icon"> Nayara Fonseca
+                </a>
+                <a href="https://github.com/McLovin-27" target="_blank" aria-label="João Vitor no GitHub">
+                    <img src="../images/github.png" alt="GitHub" class="github-icon"> João Vitor
+                </a>
+                <a href="https://github.com/miguelcosta-ferreira" target="_blank" aria-label="Miguel Ferreira no GitHub">
+                    <img src="../images/github.png" alt="GitHub" class="github-icon"> Miguel Ferreira
+                </a>
+                <a href="https://github.com/rafaelaaquino031" target="_blank" aria-label="Rafaela Aquino no GitHub">
+                    <img src="../images/github.png" alt="GitHub" class="github-icon"> Rafaela Aquino
+                </a>
+                <a href="https://github.com/MiguelDuarte13" target="_blank" aria-label="Miguel Duarte no GitHub">
+                    <img src="../images/github.png" alt="GitHub" class="github-icon"> Miguel Duarte
+                </a>
+            </div>
+        </footer>
+  
+    </main>
+
+
+
+
+            <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a class="nav-logo" href="index.html" data-home-link>
+                    <div class="nav-logo-icon">M</div>
+                    MaterialAtípico
+                </a>
+                <p>Plataforma colaborativa para compartilhamento de materiais atípicos.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Plataforma</h4>
+                <ul>
+                    <li><a href="#">Categorias</a></li>
+                    <li><a href="#">Como Funciona</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Sobre nós</h4>
+                <ul>
+                    <li><a href="#">Nossa Missão</a></li>
+                    <li><a href="#">Comunidade</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Termos de Uso</a></li>
+                    <li><a href="#">Privacidade</a></li>
+                    <li><a href="#">Direitos da Comunidade</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 MaterialAtípico. Construindo uma educação mais inclusiva.
+        </div>
+    </footer>
+
+    <script src="../js/sessao.js"></script>
+    <script src="../js/header-toggle.js"></script>
+    <script src="../js/contato.js"></script>
+    </body>
+</html>

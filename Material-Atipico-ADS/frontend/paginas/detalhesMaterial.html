@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MaterialAtípico - Início</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Lato:wght@400;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/home-logado.css" />
+    <link rel="stylesheet" href="../css/detalhesMaterial.css" />
+</head>
+
+<body>
+    <input type="checkbox" id="sidebar-toggle" hidden />
+    <input type="checkbox" id="search-toggle" hidden />
+    <label class="search-overlay" for="search-toggle" aria-hidden="true"></label>
+    <input type="checkbox" id="avatar-toggle" hidden />
+    <label class="avatar-overlay" for="avatar-toggle" aria-hidden="true"></label>
+
+    <!-- ── OVERLAY (label fecha ao clicar fora) ── -->
+    <label class="sidebar-overlay" for="sidebar-toggle" aria-hidden="true"></label>
+
+    <!-- ── SIDEBAR ── -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <span class="sidebar-title">Menu</span>
+            <!-- label fecha a sidebar -->
+            <label class="sidebar-close" for="sidebar-toggle" aria-label="Fechar menu">
+                <i class="fa-solid fa-xmark"></i>
+            </label>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="home-logado.html" class="sidebar-item">
+                <span class="item-icon"><i class="fa-solid fa-house"></i></span>
+                Home
+            </a>
+            <a href="material.html" class="sidebar-item">
+                <span class="item-icon"><i class="fa-regular fa-eye"></i></span>
+                Materiais
+            </a>
+            <a href="criar.html" class="sidebar-item">
+                <span class="item-icon"><i class="fa-solid fa-arrow-up-from-bracket"></i></span>
+                Criar
+            </a>
+            <a href="meus-materiais.html" class="sidebar-item">
+                <span class="item-icon"><i class="fa-regular fa-user"></i></span>
+                Perfil
+            </a>
+            <a href="admin.html" id="sidebar-admin-link" class="sidebar-item">
+                <span class="item-icon"><i class="fa-solid fa-user-tie"></i></span>
+                Admin
+            </a>
+            <a href="/paginas/sobre.html" class="sidebar-item">
+                <span class="item-icon"><i class="fa-solid fa-circle-info"></i></span>
+                Sobre nós
+            </a>
+            <a href="/paginas/contato.html" class="sidebar-item">
+                <span class="item-icon"><i class="fa-regular fa-envelope"></i></span>
+                Contato
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <button class="sidebar-logged-btn">
+                <i class="fa-solid fa-circle-check"></i>
+                Logado
+            </button>
+            <div class="sidebar-status-box">
+                <div class="sidebar-status-label">Status Atual:</div>
+                <div class="sidebar-status-value">HOME</div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- ── NAV PÓS-LOGIN ── -->
+    <nav>
+        <div class="nav-left">
+            <!-- label abre a sidebar -->
+            <label class="nav-hamburger" for="sidebar-toggle" aria-label="Abrir menu">
+                <i class="fa-solid fa-bars"></i>
+            </label>
+            <a class="nav-logo" href="home-logado.html">
+                <div class="nav-logo-icon">M</div>
+                MaterialAtípico
+            </a>
+        </div>
+        <div class="nav-right">
+            <div class="nav-search-wrap">
+                <div class="nav-search-bar">
+                    <i class="fa-solid fa-magnifying-glass nav-search-icon"></i>
+                    <input class="nav-search-input" type="text" placeholder="Buscar materiais..." />
+                    <label class="nav-search-close" for="search-toggle" aria-label="Fechar busca">
+                        <i class="fa-solid fa-xmark"></i>
+                    </label>
+                </div>
+                <label class="nav-icon-btn nav-search-btn-label" for="search-toggle" aria-label="Buscar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </label>
+            </div>
+            <div class="avatar-menu-wrap">
+                <label class="nav-avatar-btn" for="avatar-toggle" aria-label="Perfil">
+                    <i class="fa-solid fa-user"></i>
+                </label>
+                <div class="avatar-dropdown">
+                    <div class="avatar-dropdown-name" id="nav-usuario-nome"></div>
+                    <a href="meus-materiais.html" class="avatar-dropdown-item">
+                        <i class="fa-regular fa-user"></i>
+                        Ver perfil
+                    </a>
+                    <a href="configuracoes.html" class="avatar-dropdown-item">
+                        <i class="fa-solid fa-gear"></i>
+                        Configurações
+                    </a>
+                    <div class="avatar-dropdown-divider"></div>
+                    <a href="login.html" class="avatar-dropdown-item avatar-dropdown-item--danger">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        Sair
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <a href="material.html" class="back-link">
+            ← Voltar para lista de materiais
+        </a>
+
+        <div class="layout">
+
+
+            <div>
+
+                <div class="preview-card">
+
+                    <div class="preview">
+
+                        <div class="preview-icon">
+                            📄
+                        </div>
+
+                        <p>Pré-visualização do Material</p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="content-card">
+
+                    <div class="content-body">
+
+                        <div class="content-header-row">
+                            <h1 class="title" id="material-titulo">
+                                Atividade de Alfabetização para TEA
+                            </h1>
+                            <button
+                                type="button"
+                                class="fav-btn-detalhe"
+                                id="fav-btn-detalhe"
+                                aria-label="Favoritar material"
+                                title="Favoritar material"
+                            >
+                                <i class="fa-regular fa-heart" id="fav-icon-detalhe"></i>
+                            </button>
+                        </div>
+
+                        <div class="tags" id="material-tags"></div>
+
+                        <h3 class="section-title">
+                            Descrição
+                        </h3>
+
+                        <div id="material-descricao"></div>
+
+                        <button class="download-btn" id="download-btn">
+                            ⬇ Baixar Material (PDF)
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="rating-card">
+
+                    <div class="rating-body">
+
+                        <h3 class="section-title">
+                            Avaliações
+                        </h3>
+
+                        <div class="rating-box">
+
+                            <div class="rating-left">
+
+                                <div class="rating-number" id="rating-media">
+                                    —
+                                </div>
+
+                                <div class="stars" id="rating-estrelas">
+                                    ☆☆☆☆☆
+                                </div>
+
+                                <div class="rating-count" id="rating-contagem">
+                                    0 avaliações
+                                </div>
+
+                            </div>
+
+                            <div class="rating-bars" id="rating-bars"></div>
+
+                        </div>
+
+                        <!-- REVIEW -->
+
+                        <div class="review-box" id="review-box">
+
+                            <h4>
+                                Avaliar este material
+                            </h4>
+
+                            <div class="review-stars" id="review-stars"></div>
+                            <p id="review-stars-label">Toque em uma estrela para avaliar</p>
+
+                            <textarea id="avaliacao-comentario" placeholder="Deixe seu comentário (opcional)"></textarea>
+
+                            <p id="aviso-avaliacao" hidden></p>
+
+                            <button class="send-btn" id="btn-enviar-avaliacao">
+                                Enviar Avaliação
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- COMMENTS -->
+
+                <div class="comments-card">
+
+                    <div class="comments-body">
+
+                        <h3 class="section-title">
+                            Comentários
+                        </h3>
+
+                        <div id="lista-comentarios"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div>
+
+                <div class="author-card">
+
+                    <h3 class="author-title">
+                        Autor do Material
+                    </h3>
+
+                    <div class="author-info">
+
+                        <div class="author-avatar"></div>
+
+                        <div>
+
+                            <div class="author-name" id="author-nome">
+                                —
+                            </div>
+
+                            <div class="author-role" id="author-tipo">
+                                —
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <p class="author-description" id="author-bio">
+                    </p>
+
+                    <div class="author-stats">
+
+                        <div class="stat">
+                            <span>Materiais postados:</span>
+                            <strong id="author-stat-materiais">0</strong>
+                        </div>
+
+                        <div class="stat">
+                            <span>Média de avaliação:</span>
+                            <strong id="author-stat-avaliacao">—</strong>
+                        </div>
+
+                    </div>
+
+                    <a href="perfil.html" id="author-visitar-link"><button class="visit-btn">
+                        👤 Visitar Perfil
+                    </button></a>
+
+                </div>
+
+                <!-- AÇÕES DE ADMIN — só aparece pra quem é admin -->
+                <div class="author-card admin-acoes" id="admin-acoes-card" style="display:none">
+
+                    <h3 class="author-title">
+                        Ações de Administrador
+                    </h3>
+
+                    <button type="button" class="visit-btn btn-bloquear" id="btn-admin-bloquear">
+                        🚫 Bloquear material
+                    </button>
+
+                    <button type="button" class="visit-btn btn-excluir" id="btn-admin-excluir">
+                        🗑️ Excluir material
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a class="nav-logo" href="home-logado.html">
+                    <div class="nav-logo-icon">M</div>
+                    MaterialAtípico
+                </a>
+                <p>Plataforma colaborativa para compartilhamento de materiais atípicos.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Plataforma</h4>
+                <ul>
+                    <li><a href="#">Categorias</a></li>
+                    <li><a href="#">Como Funciona</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Sobre nós</h4>
+                <ul>
+                    <li><a href="#">Nossa Missão</a></li>
+                    <li><a href="#">Comunidade</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Termos de Uso</a></li>
+                    <li><a href="#">Privacidade</a></li>
+                    <li><a href="#">Direitos da Comunidade</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 MaterialAtípico. Construindo uma educação mais inclusiva.
+        </div>
+    </footer>
+
+    <script src="../js/sessao.js"></script>
+    <script src="../js/materiais-store.js"></script>
+    <script src="../js/detalhesMaterial.js"></script>
+
+</body>
+
+</html>

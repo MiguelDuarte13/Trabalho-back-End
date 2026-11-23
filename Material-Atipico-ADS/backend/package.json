@@ -1,0 +1,14 @@
+{
+  "name": "material-atipico-backend",
+  "version": "1.0.0",
+  "description": "API REST da plataforma Material Atípico (espelha as regras de negócio do front-end).",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test test/*.test.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

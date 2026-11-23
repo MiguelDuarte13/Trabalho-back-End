@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Editar Material – MaterialAtípico</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/home-logado.css" />
+    <link rel="stylesheet" href="../css/editarMaterial.css" />
+</head>
+
+<body>
+
+    <input type="checkbox" id="sidebar-toggle" hidden />
+    <input type="checkbox" id="search-toggle" hidden />
+    <label class="search-overlay" for="search-toggle" aria-hidden="true"></label>
+    <input type="checkbox" id="avatar-toggle" hidden />
+    <label class="avatar-overlay" for="avatar-toggle" aria-hidden="true"></label>
+    <label class="sidebar-overlay" for="sidebar-toggle" aria-hidden="true"></label>
+
+    <!-- ── SIDEBAR ── -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <span class="sidebar-title">Menu</span>
+            <label class="sidebar-close" for="sidebar-toggle" aria-label="Fechar menu">
+                <i class="fa-solid fa-xmark"></i>
+            </label>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="home-logado.html" class="sidebar-item">
+                <span class="item-icon"><i class="fa-solid fa-house"></i></span>
+                Home
+            </a>
+            <a href="material.html" class="sidebar-item">
+                <span class="item-icon"><i class="fa-regular fa-eye"></i></span>
+                Materiais
+            </a>
+            <a href="criar.html" class="sidebar-item">
+                <span class="item-icon"><i class="fa-solid fa-arrow-up-from-bracket"></i></span>
+                Criar
+            </a>
+            <a href="meus-materiais.html" class="sidebar-item active">
+                <span class="item-icon"><i class="fa-regular fa-user"></i></span>
+                Perfil
+            </a>
+            <a href="admin.html" id="sidebar-admin-link" class="sidebar-item">
+                <span class="item-icon"><i class="fa-solid fa-user-tie"></i></span>
+                Admin
+            </a>
+            <a href="sobre.html" class="sidebar-item">
+                <span class="item-icon"><i class="fa-solid fa-circle-info"></i></span>
+                Sobre nós
+            </a>
+            <a href="contato.html" class="sidebar-item">
+                <span class="item-icon"><i class="fa-regular fa-envelope"></i></span>
+                Contato
+            </a>
+        </nav>
+        <div class="sidebar-footer">
+            <button class="sidebar-logged-btn">
+                <i class="fa-solid fa-circle-check"></i>
+                Logado
+            </button>
+            <div class="sidebar-status-box">
+                <div class="sidebar-status-label">Status Atual:</div>
+                <div class="sidebar-status-value">EDITAR</div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- ── NAV ── -->
+    <nav>
+        <div class="nav-left">
+            <label class="nav-hamburger" for="sidebar-toggle" aria-label="Abrir menu">
+                <i class="fa-solid fa-bars"></i>
+            </label>
+            <a class="nav-logo" href="home-logado.html">
+                <div class="nav-logo-icon">M</div>
+                MaterialAtípico
+            </a>
+        </div>
+        <div class="nav-right">
+            <div class="avatar-menu-wrap">
+                <label class="nav-avatar-btn" for="avatar-toggle" aria-label="Perfil">
+                    <i class="fa-solid fa-user"></i>
+                </label>
+                <div class="avatar-dropdown">
+                    <div class="avatar-dropdown-name" id="nav-usuario-nome"></div>
+                    <a href="meus-materiais.html" class="avatar-dropdown-item">
+                        <i class="fa-regular fa-user"></i>
+                        Ver perfil
+                    </a>
+                    <a href="configuracoes.html" class="avatar-dropdown-item">
+                        <i class="fa-solid fa-gear"></i>
+                        Configurações
+                    </a>
+                    <div class="avatar-dropdown-divider"></div>
+                    <a href="login.html" class="avatar-dropdown-item avatar-dropdown-item--danger">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        Sair
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ── CONTEÚDO ── -->
+    <main class="editar-main">
+
+        <a href="meus-materiais.html" class="editar-voltar">
+            ← Voltar para Meu Perfil
+        </a>
+
+        <div class="editar-header">
+            <h1>Editar Material</h1>
+            <p>Atualize as informações do seu material educacional</p>
+        </div>
+
+        <div class="editar-status-row">
+            <span class="editar-status-label">Status atual:</span>
+            <span class="status" id="editar-status-badge">—</span>
+        </div>
+
+        <div class="editar-aviso" id="editar-aviso-publicado" hidden>
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <div>
+                <strong>Atenção: material já publicado</strong>
+                <p>Ao salvar as alterações, o material voltará para análise do administrador antes de ser republicado.</p>
+            </div>
+        </div>
+
+        <form class="editar-form" id="editar-form">
+
+            <!-- Título -->
+            <div class="editar-campo">
+                <label class="editar-label" for="editar-titulo">Título do Material <span class="obrig">*</span></label>
+                <input class="editar-input" id="editar-titulo" type="text" placeholder="Título do material" />
+            </div>
+
+            <!-- Categoria -->
+            <div class="editar-campo">
+                <label class="editar-label" for="editar-categoria">Categoria <span class="obrig">*</span></label>
+                <select class="editar-select" id="editar-categoria">
+                    <option value="" disabled>Selecione uma categoria</option>
+                    <option value="tea">TEA (Transtorno do Espectro Autista)</option>
+                    <option value="tdah">TDAH</option>
+                    <option value="dislexia">Dislexia</option>
+                    <option value="outros">Outros</option>
+                </select>
+            </div>
+
+            <!-- Tipo -->
+            <div class="editar-campo">
+                <label class="editar-label" for="editar-tipo">Tipo de Material <span class="obrig">*</span></label>
+                <select class="editar-select" id="editar-tipo">
+                    <option value="" disabled>Selecione o tipo</option>
+                    <option value="atividade">Atividade para Impressão</option>
+                    <option value="plano">Plano de aula</option>
+                    <option value="jogo">Jogo educativo</option>
+                    <option value="visual">Apoio visual</option>
+                    <option value="video">Vídeo</option>
+                </select>
+            </div>
+
+            <!-- Faixa Etária -->
+            <div class="editar-campo editar-campo--row">
+                <div>
+                    <label class="editar-label" for="editar-faixa-min">Faixa Etária (mínima)</label>
+                    <select class="editar-select" id="editar-faixa-min">
+                        <option value="0-3 anos">0-3 anos</option>
+                        <option value="4-6 anos">4-6 anos</option>
+                        <option value="7-10 anos">7-10 anos</option>
+                        <option value="11-14 anos">11-14 anos</option>
+                        <option value="15+ anos">15+ anos</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="editar-label" for="editar-faixa-max">Faixa Etária (máxima)</label>
+                    <select class="editar-select" id="editar-faixa-max">
+                        <option value="0-3 anos">0-3 anos</option>
+                        <option value="4-6 anos">4-6 anos</option>
+                        <option value="7-10 anos">7-10 anos</option>
+                        <option value="11-14 anos">11-14 anos</option>
+                        <option value="15+ anos">15+ anos</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Descrição -->
+            <div class="editar-campo">
+                <label class="editar-label" for="editar-descricao">Descrição do Material <span class="obrig">*</span></label>
+                <textarea class="editar-textarea" id="editar-descricao" placeholder="Descreva seu material..."></textarea>
+                <span class="editar-hint" id="editar-descricao-hint">Mínimo 100 caracteres</span>
+            </div>
+
+            <!-- Arquivo atual + substituição -->
+            <div class="editar-campo">
+                <label class="editar-label">Arquivo do Material</label>
+
+                <div class="editar-arquivo-atual" id="editar-arquivo-atual" hidden>
+                    <div class="editar-arquivo-icone">
+                        <i class="fa-solid fa-file-pdf"></i>
+                    </div>
+                    <div>
+                        <p class="editar-arquivo-nome" id="editar-arquivo-nome">—</p>
+                        <p class="editar-arquivo-info" id="editar-arquivo-info"></p>
+                    </div>
+                    <span class="editar-badge-atual">Arquivo atual</span>
+                </div>
+
+                <div class="editar-upload-area" id="editar-upload-area">
+                    <p class="editar-upload-txt">Substituir arquivo (opcional)</p>
+                    <label class="editar-btn-upload" for="editar-input-arquivo">Selecionar novo arquivo</label>
+                    <input type="file" id="editar-input-arquivo" accept=".pdf,.doc,.docx,.jpg,.png" hidden />
+                </div>
+            </div>
+
+            <!-- Imagem de capa -->
+            <div class="editar-campo">
+                <label class="editar-label">Imagem de Capa (opcional)</label>
+                <div class="editar-capa-area" id="editar-capa-area">
+                    <i class="fa-regular fa-image editar-capa-icone"></i>
+                    <p class="editar-upload-txt">Substituir imagem de capa</p>
+                    <label class="editar-btn-upload" for="editar-input-capa">Escolher Imagem</label>
+                    <input type="file" id="editar-input-capa" accept=".jpg,.jpeg,.png,.webp" hidden />
+                </div>
+            </div>
+
+            <!-- Tags -->
+            <div class="editar-campo">
+                <label class="editar-label" for="editar-tags">Tags (opcional)</label>
+                <input class="editar-input" id="editar-tags" type="text" placeholder="Ex: alfabetização, TEA, visual" />
+                <span class="editar-hint">Separadas por vírgula</span>
+            </div>
+
+            <!-- Instruções -->
+            <div class="editar-campo">
+                <label class="editar-label" for="editar-instrucoes">Instruções de Uso (opcional)</label>
+                <textarea class="editar-textarea editar-textarea--sm" id="editar-instrucoes" placeholder="Como aplicar este material?"></textarea>
+            </div>
+
+            <!-- Botões -->
+            <div class="editar-acoes">
+                <a href="meus-materiais.html" class="editar-btn-cancelar">Cancelar</a>
+                <button type="submit" class="editar-btn-salvar">Salvar Alterações</button>
+            </div>
+
+        </form>
+
+    </main>
+
+    <!-- ── POPUP DE SUCESSO ── -->
+    <div class="editar-popup-overlay" id="editar-popup-overlay" style="display:none">
+        <div class="editar-popup">
+            <div class="editar-popup-icone">
+                <i class="fa-solid fa-clock"></i>
+            </div>
+            <h2>Material enviado para análise!</h2>
+            <p>Suas alterações foram salvas. O material foi enviado para revisão do administrador e ficará indisponível até ser aprovado novamente.</p>
+            <button class="editar-popup-btn" id="editar-popup-ok">Ir para Meus Materiais</button>
+        </div>
+    </div>
+
+    <!-- ── FOOTER ── -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a class="nav-logo" href="home-logado.html">
+                    <div class="nav-logo-icon">M</div>
+                    MaterialAtípico
+                </a>
+                <p>Plataforma colaborativa para compartilhamento de materiais atípicos.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Plataforma</h4>
+                <ul>
+                    <li><a href="#">Categorias</a></li>
+                    <li><a href="#">Como Funciona</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Sobre nós</h4>
+                <ul>
+                    <li><a href="#">Nossa Missão</a></li>
+                    <li><a href="#">Comunidade</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Termos de Uso</a></li>
+                    <li><a href="#">Privacidade</a></li>
+                    <li><a href="#">Direitos da Comunidade</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 MaterialAtípico. Construindo uma educação mais inclusiva.
+        </div>
+    </footer>
+
+    <script src="../js/sessao.js"></script>
+    <script src="../js/materiais-store.js"></script>
+    <script src="../js/editarMaterial.js"></script>
+</body>
+</html>

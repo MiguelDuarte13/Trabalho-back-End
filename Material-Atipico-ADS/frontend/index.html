@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MaterialAtípico - Materiais Adaptados para Diferentes Necessidades</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/home.css" />
+</head>
+
+<body>
+    <input type="checkbox" id="search-toggle" hidden />
+    <label class="search-overlay" for="search-toggle" aria-hidden="true"></label>
+
+    <!-- ── NAV ── -->
+    <nav>
+        <a class="nav-logo" href="index.html">
+            <div class="nav-logo-icon">M</div>
+            MaterialAtípico
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="paginas/sobre.html">Sobre nós</a></li>
+            <li><a href="paginas/contato.html">Contato</a></li>
+        </ul>
+        <div class="nav-right">
+            <div class="nav-search-wrap">
+                <div class="nav-search-bar">
+                    <i class="fa-solid fa-magnifying-glass nav-search-icon"></i>
+                    <input class="nav-search-input" type="text" placeholder="Buscar materiais..." />
+                    <label class="nav-search-close" for="search-toggle" aria-label="Fechar busca">
+                        <i class="fa-solid fa-xmark"></i>
+                    </label>
+                </div>
+                <label class="nav-search-btn-label" for="search-toggle" aria-label="Buscar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </label>
+            </div>
+            <a class="btn-login" href="paginas/login.html">Login / Cadastro</a>
+        </div>
+    </nav>
+
+    <!-- ── HERO ── -->
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-label" id="platf">Plataforma Colaborativa</p>
+            <h1>Materiais Adaptados para Diferentes Necessidades</h1>
+            <p>Compartilhe e acesse recursos pedagógicos atípicos. Uma comunidade colaborativa dedicada à inclusão educacional.</p>
+            <a href="/paginas/login.html" class="btn-primary">
+                Explorar Materiais
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+        <div class="hero-visual">
+            <div class="hero-blob"></div>
+        </div>
+    </section>
+
+    <!-- ── SEARCH ── -->
+    <section class="search-section">
+        <div class="search-card">
+            <div class="search-input-wrap">
+                <i class="fa-solid fa-magnifying-glass" style="color: #9CA3AF;"></i>
+                <input type="text" placeholder="Buscar materiais atípicos..." />
+            </div>
+            <div class="search-filters">
+                <span class="filter-label">
+                    <i class="fa-solid fa-filter"></i>
+                    Filtros:
+                </span>
+                <select class="filter-select">
+                    <option value="">Todas as Categorias</option>
+                    <option value="tea">TEA</option>
+                    <option value="tdah">TDAH</option>
+                    <option value="dislexia">Dislexia</option>
+                    <option value="outros">Outros</option>
+                </select>
+                <select class="filter-select">
+                    <option value="">Tipo de Material</option>
+                    <option value="atividade">Atividade</option>
+                    <option value="plano">Plano de aula</option>
+                    <option value="jogo">Jogo educativo</option>
+                    <option value="visual">Apoio visual</option>
+                    <option value="video">Vídeo</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── MATERIAIS EM DESTAQUE ── -->
+    <section class="materiais-section">
+        <div class="section-header">
+            <h2>Materiais em Destaque</h2>
+            <p>6 materiais encontrados</p>
+        </div>
+        <div class="materiais-grid">
+
+            <div class="material-card">
+                <div class="material-thumb">
+                    <i class="fa-solid fa-book-open" style="font-size: 40px; color: #7C3AED;"></i>
+                </div>
+                <div class="material-body">
+                    <span class="material-tag tag-tea">TEA</span>
+                    <h3>Atividade de Alfabetização para TEA</h3>
+                    <p>Atividades visuais e exercícios de associação para alfabetização.</p>
+                    <div class="material-footer">
+                        <span class="material-time">2h atrás</span>
+                        <a href="/paginas/login.html" class="ver-mais">Ver mais →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="material-card">
+                <div class="material-thumb">
+                    <i class="fa-solid fa-book-open" style="font-size: 40px; color: #7C3AED;"></i>
+                </div>
+                <div class="material-body">
+                    <span class="material-tag tag-tdah">TDAH</span>
+                    <h3>Jogo de Memória Adaptado</h3>
+                    <p>Jogo de memória com elementos visuais para auxiliar concentração.</p>
+                    <div class="material-footer">
+                        <span class="material-time">3h atrás</span>
+                        <a href="/paginas/login.html" class="ver-mais">Ver mais →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="material-card">
+                <div class="material-thumb">
+                    <i class="fa-solid fa-book-open" style="font-size: 40px; color: #7C3AED;"></i>
+                </div>
+                <div class="material-body">
+                    <span class="material-tag tag-dislexia">Dislexia</span>
+                    <h3>Leitura Adaptada para Dislexia</h3>
+                    <p>Textos com fontes especiais e espaçamento adaptado.</p>
+                    <div class="material-footer">
+                        <span class="material-time">5h atrás</span>
+                        <a href="/paginas/login.html" class="ver-mais">Ver mais →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="material-card">
+                <div class="material-thumb">
+                    <i class="fa-solid fa-book-open" style="font-size: 40px; color: #7C3AED;"></i>
+                </div>
+                <div class="material-body">
+                    <span class="material-tag tag-tdah">TDAH</span>
+                    <h3>Exercícios de Matemática para TDAH</h3>
+                    <p>Exercícios curtos e visuais de matemática básica.</p>
+                    <div class="material-footer">
+                        <span class="material-time">1 dia atrás</span>
+                        <a href="/paginas/login.html" class="ver-mais">Ver mais →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="material-card">
+                <div class="material-thumb">
+                    <i class="fa-solid fa-book-open" style="font-size: 40px; color: #7C3AED;"></i>
+                </div>
+                <div class="material-body">
+                    <span class="material-tag tag-tea">TEA</span>
+                    <h3>Vídeo Educativo sobre Emoções</h3>
+                    <p>Vídeo ilustrativo sobre reconhecimento de emoções.</p>
+                    <div class="material-footer">
+                        <span class="material-time">1 dia atrás</span>
+                        <a href="/paginas/login.html" class="ver-mais">Ver mais →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="material-card">
+                <div class="material-thumb">
+                    <i class="fa-solid fa-book-open" style="font-size: 40px; color: #7C3AED;"></i>
+                </div>
+                <div class="material-body">
+                    <span class="material-tag tag-outros">Outros</span>
+                    <h3>Atividades Sensoriais</h3>
+                    <p>Conjunto de atividades sensoriais para desenvolvimento motor.</p>
+                    <div class="material-footer">
+                        <span class="material-time">2 dias atrás</span>
+                        <a href="/paginas/login.html" class="ver-mais">Ver mais →</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ── PONTO DE DISCUSSÃO ── -->
+    <section class="discussao-section">
+        <div class="section-header">
+            <h2>Ponto de Discussão</h2>
+            <p>Tópicos em destaque da comunidade</p>
+        </div>
+        <div class="discussao-grid">
+
+            <div class="discussao-card">
+                <h3>Como adaptar atividades para crianças com TEA?</h3>
+                <div class="discussao-author">
+                    <div class="author-avatar">MS</div>
+                    <span class="author-name">Maria Silva</span>
+                </div>
+                <div class="discussao-meta">
+                    <span class="meta-item">
+                        <i class="fa-regular fa-comment"></i>
+                        3
+                    </span>
+                    <span class="meta-item">🔥 15</span>
+                </div>
+            </div>
+
+            <div class="discussao-card">
+                <h3>Estratégias eficazes para TDAH em sala de aula</h3>
+                <div class="discussao-author">
+                    <div class="author-avatar">JS</div>
+                    <span class="author-name">João Santos</span>
+                </div>
+                <div class="discussao-meta">
+                    <span class="meta-item">
+                        <i class="fa-regular fa-comment"></i>
+                        16
+                    </span>
+                    <span class="meta-item">🔥 32</span>
+                </div>
+            </div>
+
+            <div class="discussao-card">
+                <h3>Materiais sensoriais: compartilhe suas experiências</h3>
+                <div class="discussao-author">
+                    <div class="author-avatar">AC</div>
+                    <span class="author-name">Ana Costa</span>
+                </div>
+                <div class="discussao-meta">
+                    <span class="meta-item">
+                        <i class="fa-regular fa-comment"></i>
+                        21
+                    </span>
+                    <span class="meta-item">🔥 58</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ── POR QUE ── -->
+    <section class="porque-section">
+        <h2>Por que escolher nossa plataforma?</h2>
+        <p>Uma comunidade dedicada à inclusão educacional</p>
+        <div class="porque-grid">
+
+            <div class="porque-item">
+                <div class="porque-icon">
+                    <i class="fa-solid fa-circle-check" style="font-size: 26px; color: #7C3AED;"></i>
+                </div>
+                <h3>Aprovação de Qualidade</h3>
+                <p>Materiais passam por aprovação para garantir confiabilidade e relevância pedagógica.</p>
+            </div>
+
+            <div class="porque-item">
+                <div class="porque-icon">
+                    <i class="fa-solid fa-users" style="font-size: 26px; color: #7C3AED;"></i>
+                </div>
+                <h3>Plataforma Colaborativa</h3>
+                <p>Comunidade aberta onde educadores e familiares compartilham experiências.</p>
+            </div>
+
+            <div class="porque-item">
+                <div class="porque-icon">
+                    <i class="fa-solid fa-star" style="font-size: 26px; color: #7C3AED;"></i>
+                </div>
+                <h3>Foco em Inclusão</h3>
+                <p>Facilita o acesso a materiais adaptados para diferentes necessidades especiais.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ── CTA ── -->
+    <section class="cta-section">
+        <h2>Faça parte da nossa comunidade</h2>
+        <p>Compartilhe seus materiais ou acesse centenas de recursos adaptados.<br>Juntos, construímos uma educação mais inclusiva.</p>
+        <a href="/paginas/login.html"><button class="btn-white">Criar Conta Grátis</button></a>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a class="nav-logo" href="index.html">
+                    <div class="nav-logo-icon">M</div>
+                    MaterialAtípico
+                </a>
+                <p>Plataforma colaborativa para compartilhamento de materiais atípicos.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Plataforma</h4>
+                <ul>
+                    <li><a href="#">Categorias</a></li>
+                    <li><a href="#">Como Funciona</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Sobre nós</h4>
+                <ul>
+                    <li><a href="#">Nossa Missão</a></li>
+                    <li><a href="#">Comunidade</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Termos de Uso</a></li>
+                    <li><a href="#">Privacidade</a></li>
+                    <li><a href="#">Direitos da Comunidade</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 MaterialAtípico. Construindo uma educação mais inclusiva.
+        </div>
+    </footer>
+
+    <script src="js/home.js"></script>
+</body>
+
+</html>

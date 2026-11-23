@@ -1,0 +1,346 @@
+/* ── PÁGINA EDITAR MATERIAL ── */
+
+.editar-main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 32px 24px 64px;
+}
+
+.editar-voltar {
+    display: inline-block;
+    color: #7c3aed;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-bottom: 24px;
+    transition: color 0.15s;
+}
+
+.editar-voltar:hover { color: #6d28d9; }
+
+.editar-header {
+    margin-bottom: 24px;
+}
+
+.editar-header h1 {
+    font-size: 32px;
+    font-weight: 800;
+    color: #111827;
+    margin-bottom: 6px;
+}
+
+.editar-header p {
+    color: #6b7280;
+    font-size: 15px;
+}
+
+/* ── STATUS ATUAL ── */
+.editar-status-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.editar-status-label {
+    font-size: 14px;
+    color: #374151;
+    font-weight: 600;
+}
+
+/* ── AVISO MATERIAL PUBLICADO ── */
+.editar-aviso {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 28px;
+}
+
+.editar-aviso i {
+    color: #d97706;
+    font-size: 18px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.editar-aviso strong {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    color: #92400e;
+    margin-bottom: 4px;
+}
+
+.editar-aviso p {
+    font-size: 13px;
+    color: #b45309;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* ── FORMULÁRIO ── */
+.editar-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.editar-campo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.editar-campo--row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.editar-campo--row > div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.editar-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.obrig { color: #7c3aed; }
+
+.editar-input,
+.editar-select,
+.editar-textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: inherit;
+    color: #111827;
+    background: white;
+    transition: border-color 0.15s, box-shadow 0.15s;
+    outline: none;
+}
+
+.editar-input:focus,
+.editar-select:focus,
+.editar-textarea:focus {
+    border-color: #7c3aed;
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+}
+
+.editar-textarea {
+    height: 130px;
+    resize: vertical;
+}
+
+.editar-textarea--sm { height: 100px; }
+
+.editar-hint {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── ARQUIVO ATUAL ── */
+.editar-arquivo-atual {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: white;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+}
+
+.editar-arquivo-icone {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: #ede9fe;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #7c3aed;
+    flex-shrink: 0;
+}
+
+.editar-arquivo-nome {
+    font-size: 14px;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 2px;
+}
+
+.editar-arquivo-info {
+    font-size: 12px;
+    color: #9ca3af;
+    margin: 0;
+}
+
+.editar-badge-atual {
+    margin-left: auto;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: #dcfce7;
+    color: #15803d;
+    border: 1px solid #bbf7d0;
+    white-space: nowrap;
+}
+
+/* ── UPLOAD AREA ── */
+.editar-upload-area,
+.editar-capa-area {
+    border: 2px dashed #d8b4fe;
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+    background: #fdf4ff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.editar-capa-icone { font-size: 32px; color: #9ca3af; }
+
+.editar-upload-txt {
+    font-size: 14px;
+    color: #6b7280;
+    margin: 0;
+}
+
+.editar-btn-upload {
+    display: inline-block;
+    padding: 10px 22px;
+    border: 1.5px solid #7c3aed;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #7c3aed;
+    background: white;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.editar-btn-upload:hover { background: #f5f0ff; }
+
+/* ── BOTÕES ── */
+.editar-acoes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 8px;
+}
+
+.editar-btn-cancelar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    border-radius: 10px;
+    border: 1.5px solid #e5e7eb;
+    background: white;
+    font-size: 15px;
+    font-weight: 600;
+    color: #374151;
+    text-decoration: none;
+    transition: background 0.15s, border-color 0.15s;
+}
+
+.editar-btn-cancelar:hover { background: #f3f4f6; border-color: #9ca3af; }
+
+.editar-btn-salvar {
+    height: 48px;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(90deg, #7c3aed, #9333ea);
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: opacity 0.15s;
+    font-family: inherit;
+}
+
+.editar-btn-salvar:hover { opacity: 0.9; }
+
+/* ── POPUP DE SUCESSO ── */
+.editar-popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.editar-popup {
+    background: white;
+    border-radius: 20px;
+    padding: 40px 36px;
+    max-width: 420px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.editar-popup-icone {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #a78bfa, #7c3aed);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: white;
+    margin: 0 auto 20px;
+}
+
+.editar-popup h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 10px;
+}
+
+.editar-popup p {
+    font-size: 14px;
+    color: #6b7280;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.editar-popup-btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #7c3aed, #9333ea);
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    transition: opacity 0.15s;
+}
+
+.editar-popup-btn:hover { opacity: 0.9; }
+
+@media (max-width: 600px) {
+    .editar-campo--row { grid-template-columns: 1fr; }
+    .editar-acoes      { grid-template-columns: 1fr; }
+}

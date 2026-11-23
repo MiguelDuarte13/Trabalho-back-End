@@ -1,0 +1,29 @@
+{
+  "_comentario": "Este arquivo documenta a estrutura de um usuário. Os dados reais ficam no localStorage do navegador, na chave 'ma_usuarios' (array de objetos).",
+
+  "estrutura": {
+    "nome":          "string  — nome completo do usuário",
+    "email":         "string  — email (identificador único, usado no login)",
+    "senha":         "string  — senha escolhida no cadastro",
+    "tipo":          "string  — Educador | Familiar / Responsável | Terapeuta | Estudante | Outro",
+    "biografia":     "string  — texto livre, preenchido nas configurações de perfil",
+    "notificacoes":  {
+      "materialAprovado": "boolean — email quando o material for aprovado (padrão: true)",
+      "novasAvaliacoes":  "boolean — email quando receberem avaliações (padrão: true)",
+      "newsletter":       "boolean — newsletter mensal (padrão: false)"
+    }
+  },
+
+  "exemploUsuario": {
+    "nome":      "Maria Silva",
+    "email":     "maria@email.com",
+    "senha":     "minhasenha123",
+    "tipo":      "Educador",
+    "biografia": "",
+    "notificacoes": {
+      "materialAprovado": true,
+      "novasAvaliacoes":  true,
+      "newsletter":       false
+    }
+  }
+}

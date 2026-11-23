@@ -1,0 +1,392 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: #f5f5f7;
+    color: #111827;
+}
+
+.container {
+    width: 100%;
+    padding: 24px 18px 40px;
+}
+
+/* HEADER */
+
+.back-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #7c3aed;
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 20px;
+    width: max-content;
+}
+
+.title {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #6b7280;
+    font-size: 15px;
+    margin-bottom: 38px;
+}
+
+/* CATEGORY */
+
+.section-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.section-subtitle {
+    color: #6b7280;
+    margin-bottom: 25px;
+    font-size: 15px;
+}
+
+.categories {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 28px;
+}
+
+.category-card {
+    background: white;
+    border: 1px solid #ececec;
+    border-radius: 18px;
+    padding: 24px;
+    transition: 0.2s;
+}
+
+.category-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.icon-box {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.blue {
+    background: #eef4ff;
+    color: #2563eb;
+}
+
+.orange {
+    background: #fff4e5;
+    color: #f59e0b;
+}
+
+.green {
+    background: #ecfdf3;
+    color: #16a34a;
+}
+
+.purple {
+    background: #f5f0ff;
+    color: #9333ea;
+}
+
+.category-card h3 {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.category-card p {
+    color: #6b7280;
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+.items {
+    color: #6b7280;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* FILTER */
+
+.filter-box {
+    background: white;
+    border: 1px solid #ececec;
+    border-radius: 18px;
+    padding: 18px;
+    margin-bottom: 25px;
+}
+
+.search {
+    width: 100%;
+    height: 50px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #ededed;
+    font-size: 15px;
+    padding-left: 10px;
+    color: #111827;
+    margin-bottom: 16px;
+    background: transparent;
+}
+
+.filters {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.filters span {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+select {
+    height: 38px;
+    padding: 0 14px;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    background: white;
+    cursor: pointer;
+}
+
+/* MATERIALS */
+
+.results {
+    color: #6b7280;
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+.materials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.material-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+.material-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 32px rgba(124, 58, 237, 0.1);
+    border-color: #d8b4fe;
+}
+
+.material-top {
+    height: 150px;
+    background: #f1e8ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* Cor do banner por categoria */
+.tag--tea ~ * .material-top,
+.material-card:has(.tag--tea) .material-top    { background: #eef4ff; }
+.material-card:has(.tag--tdah) .material-top   { background: #fff9eb; }
+.material-card:has(.tag--dislexia) .material-top { background: #ecfdf5; }
+.material-card:has(.tag--outros) .material-top { background: #fdf4ff; }
+
+.material-icon {
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9333ea;
+    font-size: 26px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.material-content {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* Header do card: tag + botão favorito */
+.material-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    gap: 8px;
+}
+
+/* Tags com cor por categoria */
+.tag {
+    display: inline-block;
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    background: #f3e8ff;
+    color: #9333ea;
+    flex-shrink: 0;
+}
+
+.tag--tea     { background: #eef4ff; color: #2563eb; }
+.tag--tdah    { background: #fff4e5; color: #d97706; }
+.tag--dislexia{ background: #ecfdf5; color: #16a34a; }
+.tag--outros  { background: #fdf4ff; color: #9333ea; }
+
+/* Botão de favorito */
+.favorite-btn {
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 50%;
+    background: #f9fafb;
+    color: #d1d5db;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background 0.15s, color 0.15s, transform 0.15s;
+    flex-shrink: 0;
+}
+
+.favorite-btn:hover {
+    background: #fee2e2;
+    color: #ef4444;
+    transform: scale(1.1);
+}
+
+.favorite-btn.is-active {
+    background: #fee2e2;
+    color: #ef4444;
+}
+
+.material-title {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    line-height: 1.4;
+    color: #111827;
+}
+
+.material-desc {
+    color: #6b7280;
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 14px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    flex: 1;
+}
+
+.material-info {
+    display: flex;
+    gap: 14px;
+    color: #9ca3af;
+    font-size: 12px;
+    margin-bottom: 14px;
+}
+
+.material-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #f3f4f6;
+    padding-top: 12px;
+    margin-top: auto;
+}
+
+.time {
+    color: #9ca3af;
+    font-size: 12px;
+}
+
+.view-more {
+    text-decoration: none;
+    color: #7c3aed;
+    font-weight: 700;
+    font-size: 13px;
+    transition: color 0.15s;
+}
+
+.view-more:hover { color: #6d28d9; }
+
+/* Estado vazio */
+.empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 48px 24px;
+    color: #9ca3af;
+}
+
+.empty-state i { font-size: 48px; margin-bottom: 14px; display: block; }
+.empty-state p { font-size: 15px; }
+
+/* Category card active (selecionado pelo filtro) */
+.category-card.active {
+    border-color: #a78bfa;
+    background: #faf5ff;
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.12);
+}
+
+@media(max-width:1200px) {
+
+    .categories {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .materials-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media(max-width:768px) {
+
+    .title {
+        font-size: 34px;
+    }
+
+    .section-title {
+        font-size: 26px;
+    }
+
+    .categories {
+        grid-template-columns: 1fr;
+    }
+
+    .materials-grid {
+        grid-template-columns: 1fr;
+    }
+
+}

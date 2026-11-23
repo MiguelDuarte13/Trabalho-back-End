@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MaterialAtípico - Início</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/home.css" />
+    <link rel="stylesheet" href="../css/home-logado.css" />
+    <link rel="stylesheet" href="../css/meuperfil.css" />
+</head>
+
+<body>
+    <input type="checkbox" id="sidebar-toggle" hidden />
+    <input type="checkbox" id="search-toggle" hidden />
+    <label class="search-overlay" for="search-toggle" aria-hidden="true"></label>
+    <input type="checkbox" id="avatar-toggle" hidden />
+    <label class="avatar-overlay" for="avatar-toggle" aria-hidden="true"></label>
+
+    <label class="sidebar-overlay" for="sidebar-toggle" aria-hidden="true"></label>
+
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <span class="sidebar-title">Menu</span>
+            <label class="sidebar-close" for="sidebar-toggle" aria-label="Fechar menu">
+                <i class="fa-solid fa-xmark"></i>
+            </label>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="home-logado.html" class="sidebar-item">
+                <span class="item-icon"><i class="fa-solid fa-house"></i></span>
+                Home
+            </a>
+            <a href="material.html" class="sidebar-item">
+                <span class="item-icon"><i class="fa-regular fa-eye"></i></span>
+                Materiais
+            </a>
+            <a href="criar.html" class="sidebar-item">
+                <span class="item-icon"><i class="fa-solid fa-arrow-up-from-bracket"></i></span>
+                Criar
+            </a>
+            <a href="meus-materiais.html" class="sidebar-item active">
+                <span class="item-icon"><i class="fa-regular fa-user"></i></span>
+                Perfil
+            </a>
+            <a href="admin.html" id="sidebar-admin-link" class="sidebar-item">
+                <span class="item-icon"><i class="fa-solid fa-user-tie"></i></span>
+                Admin
+            </a>
+            <a href="sobre.html" class="sidebar-item">
+                <span class="item-icon"><i class="fa-solid fa-circle-info"></i></span>
+                Sobre nós
+            </a>
+            <a href="contato.html" class="sidebar-item">
+                <span class="item-icon"><i class="fa-regular fa-envelope"></i></span>
+                Contato
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <button class="sidebar-logged-btn">
+                <i class="fa-solid fa-circle-check"></i>
+                Logado
+            </button>
+            <div class="sidebar-status-box">
+                <div class="sidebar-status-label">Status Atual:</div>
+                <div class="sidebar-status-value">HOME</div>
+            </div>
+        </div>
+    </aside>
+
+    <nav>
+        <div class="nav-left">
+            <label class="nav-hamburger" for="sidebar-toggle" aria-label="Abrir menu">
+                <i class="fa-solid fa-bars"></i>
+            </label>
+            <a class="nav-logo" href="home-logado.html">
+                <div class="nav-logo-icon">M</div>
+                MaterialAtípico
+            </a>
+        </div>
+        <div class="nav-right">
+            <div class="nav-search-wrap">
+                <div class="nav-search-bar">
+                    <i class="fa-solid fa-magnifying-glass nav-search-icon"></i>
+                    <input class="nav-search-input" type="text" placeholder="Buscar materiais..." />
+                    <label class="nav-search-close" for="search-toggle" aria-label="Fechar busca">
+                        <i class="fa-solid fa-xmark"></i>
+                    </label>
+                </div>
+                <label class="nav-icon-btn nav-search-btn-label" for="search-toggle" aria-label="Buscar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </label>
+            </div>
+            <div class="avatar-menu-wrap">
+                <label class="nav-avatar-btn" for="avatar-toggle" aria-label="Perfil">
+                    <i class="fa-solid fa-user"></i>
+                </label>
+                <div class="avatar-dropdown">
+                    <div class="avatar-dropdown-name" id="nav-usuario-nome"></div>
+                    <a href="meus-materiais.html" class="avatar-dropdown-item">
+                        <i class="fa-regular fa-user"></i>
+                        Ver perfil
+                    </a>
+                    <a href="configuracoes.html" class="avatar-dropdown-item">
+                        <i class="fa-solid fa-gear"></i>
+                        Configurações
+                    </a>
+                    <div class="avatar-dropdown-divider"></div>
+                    <a href="login.html" class="avatar-dropdown-item avatar-dropdown-item--danger">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        Sair
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="profile-section">
+
+        <!-- VOLTAR -->
+        <a href="home-logado.html" class="back-link">
+            <i class="fa-solid fa-arrow-left"></i> Voltar
+        </a>
+
+        <!-- HEADER PERFIL -->
+        <div class="profile-header">
+
+            <!-- FOTO -->
+            <div class="profile-avatar-area">
+                <div class="profile-avatar"></div>
+                <a href="configuracoes.html"><button class="edit-avatar-btn" title="Editar foto">
+                    <i class="fa-solid fa-pen"></i>
+                </button></a>
+            </div>
+
+            <!-- INFOS -->
+            <div class="profile-info">
+
+                <h1>Maria Silva</h1>
+                <p class="profile-bio">Professora especializada em educação inclusiva</p>
+
+                <!-- ESTATÍSTICAS -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h2 id="stat-materiais-postados">0</h2>
+                        <span>Materiais Postados</span>
+                    </div>
+                    <div class="stat-card">
+                        <h2 id="stat-downloads">0</h2>
+                        <span>Downloads</span>
+                    </div>
+                    <div class="stat-card">
+                        <h2 id="stat-avaliacao">—</h2>
+                        <span>Avaliação Média</span>
+                    </div>
+                    <div class="stat-card">
+                        <h2 id="stat-salvos">0</h2>
+                        <span>Salvos</span>
+                    </div>
+                </div>
+
+                <!-- BOTÃO -->
+                <a href="criar.html"><button class="add-material-btn">
+                    <i class="fa-solid fa-upload"></i>
+                    Adicionar Novo Material
+                </button></a>
+
+            </div>
+
+        </div>
+
+        <!-- MENU DE ABAS -->
+        <div class="top-menu">
+            <a href="meus-materiais.html" class="menu-item active">
+                Meus Materiais Postados
+            </a>
+            <a href="materiais-salvos.html" class="menu-item">
+                Materiais Salvos
+            </a>
+            <a href="configuracoes.html" class="menu-item">
+                <i class="fa-solid fa-gear"></i> Configurações
+            </a>
+        </div>
+
+        <!-- CABEÇALHO DA LISTA -->
+        <div class="list-header">
+            <h2 class="section-title">Meus Materiais</h2>
+            <select class="filter-select">
+                <option>Todos</option>
+                <option>Aprovados</option>
+                <option>Pendentes</option>
+                <option>Reprovados</option>
+            </select>
+        </div>
+
+        <!-- LISTA DE MATERIAIS (preenchida via meus_materiais.js a partir do materiais-store) -->
+        <div class="materials-list" id="materials-list"></div>
+
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a class="nav-logo" href="home-logado.html">
+                    <div class="nav-logo-icon">M</div>
+                    MaterialAtípico
+                </a>
+                <p>Plataforma colaborativa para compartilhamento de materiais atípicos.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Plataforma</h4>
+                <ul>
+                    <li><a href="#">Categorias</a></li>
+                    <li><a href="#">Como Funciona</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Sobre nós</h4>
+                <ul>
+                    <li><a href="#">Nossa Missão</a></li>
+                    <li><a href="#">Comunidade</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Termos de Uso</a></li>
+                    <li><a href="#">Privacidade</a></li>
+                    <li><a href="#">Direitos da Comunidade</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 MaterialAtípico. Construindo uma educação mais inclusiva.
+        </div>
+    </footer>
+
+    <script src="../js/sessao.js"></script>
+    <script src="../js/materiais-store.js"></script>
+    <script src="../js/meus_materiais.js"></script>
+</body>
+
+</html>

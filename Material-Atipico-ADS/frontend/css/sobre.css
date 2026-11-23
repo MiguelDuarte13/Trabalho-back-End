@@ -1,0 +1,441 @@
+.sobremain {
+  background: var(--bg, #F9FAFB);
+  min-height: 100vh;
+}
+.sobremain > .voltar,
+.sobremain > .sobre-card,
+.sobremain > .missao-section,
+.sobremain > .valores-section,
+.sobremain > .equipe-section,
+.sobremain > .impacto-section,
+.sobremain > .cta-section {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 40px;
+  padding-right: 40px;
+  box-sizing: border-box;
+}
+
+/* ── VOLTAR ── */
+.voltar {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text, #111827);
+  font-size: 14px;
+  text-decoration: none;
+  margin: 24px auto 20px;
+  font-weight: 500;
+  width: 100%;
+}
+.voltar:hover { color: var(--purple, #7C3AED); }
+
+/* ── SOBRE NÓS CARD ── */
+.sobre-card {
+  background: #ede9fe;
+  border-radius: 16px;
+  padding: 56px 60px;
+  margin-bottom: 64px;
+}
+
+.sobre-card h1 {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--text, #111827);
+  margin-bottom: 18px;
+}
+
+.sobre-card p {
+  color: #374151;
+  font-size: 15px;
+  max-width: 620px;
+  margin-bottom: 12px;
+  line-height: 1.65;
+}
+
+/* ── SECTION TITLE ── */
+.section-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text, #111827);
+  margin-bottom: 10px;
+}
+
+.section-sub {
+  text-align: center;
+  color: var(--text-muted, #6B7280);
+  font-size: 14px;
+  margin-bottom: 32px;
+}
+
+/* ── MISSÃO ── */
+.missao-section {
+  margin-bottom: 64px;
+}
+
+.missao-card {
+  background: var(--white, #ffffff);
+  border: 1px solid var(--border, #E5E7EB);
+  border-radius: 16px;
+  padding: 56px 48px;
+  text-align: center;
+}
+
+.missao-card p {
+  font-size: 16px;
+  color: #374151;
+  max-width: 720px;
+  margin: 0 auto;
+  line-height: 1.75;
+}
+
+/* ── VALORES ── */
+.valores-section {
+  margin-bottom: 64px;
+}
+
+.valores-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.valor-card {
+  background: var(--white, #ffffff);
+  border: 1px solid var(--border, #E5E7EB);
+  border-radius: 14px;
+  padding: 26px 28px;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.valor-icon {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  background: var(--purple-bg, #EDE9FA);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.valor-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--purple, #7C3AED);
+}
+
+.valor-card h3 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--text, #111827);
+}
+
+.valor-card p {
+  font-size: 13.5px;
+  color: var(--text-muted, #6B7280);
+  line-height: 1.55;
+}
+
+/* ── EQUIPE ── */
+.equipe-section {
+  margin-bottom: 56px;
+}
+
+.equipe-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.membro-card {
+  background: var(--white, #ffffff);
+  border: 1px solid var(--border, #E5E7EB);
+  border-radius: 16px;
+  padding: 36px 24px 28px;
+  text-align: center;
+}
+
+.avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #a78bfa, #7c3aed);
+  margin: 0 auto 16px;
+}
+
+.membro-card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.membro-cargo {
+  color: var(--purple, #7C3AED);
+  font-size: 13.5px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.membro-card p {
+  font-size: 13px;
+  color: var(--text-muted, #6B7280);
+}
+
+/* ── IMPACTO ── */
+.impacto-section {
+  background: linear-gradient(135deg, #7c3aed 0%, #9333ea 100%);
+  border-radius: 20px;
+  padding: 56px 40px;
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.impacto-section h2 {
+  color: #fff;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 44px;
+}
+
+.impacto-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.stat {
+  color: #fff;
+}
+
+.stat-num {
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-size: 14px;
+  opacity: 0.9;
+  font-weight: 400;
+}
+
+/* ── CAROUSEL DA EQUIPE ── */
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 0 auto;
+  max-width: 1100px;
+  overflow: hidden;
+  padding: 8px 0;
+}
+
+.carousel-prev,
+.carousel-next {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #7c3aed;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, border-color 0.2s;
+  line-height: 1;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+  background: #f5f0ff;
+  border-color: #a78bfa;
+}
+
+.carousel-cards {
+  display: flex;
+  gap: 20px;
+  flex: 1;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.carousel-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 28px 24px 24px;
+  text-align: center;
+  flex: 1;
+  max-width: 320px;
+  transition: transform 0.25s, box-shadow 0.25s, opacity 0.25s, border-color 0.25s;
+}
+
+.carousel-card--lado {
+  opacity: 0.55;
+  /* translateZ(0) sem scale: evita subpixel rendering ruim nas imagens */
+  transform: translateZ(0);
+}
+
+.carousel-card--ativo {
+  border-color: #a78bfa;
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.14);
+  transform: translateY(-4px) translateZ(0);
+  opacity: 1;
+}
+
+.carousel-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  margin: 0 auto 16px;
+  display: block;
+  border: 3px solid #e5e7eb;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.14);
+  /* força GPU layer → interpolação bilinear de alta qualidade */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  image-rendering: auto;
+}
+
+.carousel-card--ativo .carousel-avatar {
+  border-color: #a78bfa;
+  width: 130px;
+  height: 130px;
+  box-shadow: 0 6px 18px rgba(124, 58, 237, 0.2);
+}
+
+.carousel-card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #111827;
+}
+
+.carousel-card p {
+  font-size: 13px;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #d1d5db;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, width 0.2s;
+  padding: 0;
+}
+
+.dot--ativo {
+  background: #7c3aed;
+  width: 22px;
+  border-radius: 999px;
+}
+
+/* ── CTA ── */
+.cta-section {
+  text-align: center;
+  padding: 16px 0 64px;
+}
+
+.cta-section h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.cta-section p {
+  color: var(--text-muted, #6B7280);
+  font-size: 14px;
+  margin-bottom: 28px;
+}
+
+.btn-cta {
+  background: var(--purple, #7C3AED);
+  color: #fff;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s, transform .15s;
+}
+.btn-cta:hover { background: var(--purple-dark, #6D28D9); transform: translateY(-1px); }
+
+/* ── RESPONSIVO ── */
+@media (max-width: 1024px) {
+  .sobremain > .voltar,
+  .sobremain > .sobre-card,
+  .sobremain > .missao-section,
+  .sobremain > .valores-section,
+  .sobremain > .equipe-section,
+  .sobremain > .impacto-section,
+  .sobremain > .cta-section {
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+
+  .sobre-card { padding: 44px 44px; }
+  .missao-card { padding: 44px 36px; }
+}
+
+@media (max-width: 900px) {
+  .valores-grid { grid-template-columns: 1fr; }
+  .equipe-grid { grid-template-columns: 1fr 1fr; }
+  .impacto-stats { grid-template-columns: 1fr 1fr; gap: 32px; }
+}
+
+@media (max-width: 600px) {
+  .sobremain > .voltar,
+  .sobremain > .sobre-card,
+  .sobremain > .missao-section,
+  .sobremain > .valores-section,
+  .sobremain > .equipe-section,
+  .sobremain > .impacto-section,
+  .sobremain > .cta-section {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .equipe-grid { grid-template-columns: 1fr; }
+  .impacto-stats { grid-template-columns: 1fr 1fr; }
+
+  .sobre-card { padding: 32px 26px; }
+  .sobre-card h1 { font-size: 28px; }
+
+  .missao-card { padding: 36px 24px; }
+
+  .section-title { font-size: 22px; }
+  .impacto-section h2 { font-size: 22px; }
+  .stat-num { font-size: 32px; }
+  .cta-section h2 { font-size: 22px; }
+}

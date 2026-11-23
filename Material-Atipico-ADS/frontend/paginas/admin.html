@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MaterialAtípico - Admin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/home.css" />
+    <link rel="stylesheet" href="../css/home-logado.css" />
+    <link rel="stylesheet" href="../css/admin.css" />
+</head>
+
+<body>
+    <input type="checkbox" id="sidebar-toggle" hidden />
+    <input type="checkbox" id="search-toggle" hidden />
+    <label class="search-overlay" for="search-toggle" aria-hidden="true"></label>
+    <input type="checkbox" id="avatar-toggle" hidden />
+    <label class="avatar-overlay" for="avatar-toggle" aria-hidden="true"></label>
+    <label class="sidebar-overlay" for="sidebar-toggle" aria-hidden="true"></label>
+
+    <!-- ── SIDEBAR ── -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <span class="sidebar-title">Menu</span>
+            <label class="sidebar-close" for="sidebar-toggle" aria-label="Fechar menu">
+                <i class="fa-solid fa-xmark"></i>
+            </label>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="home-logado.html" class="sidebar-item">
+                <span class="item-icon"><i class="fa-solid fa-house"></i></span>Home
+            </a>
+            <a href="material.html" class="sidebar-item">
+                <span class="item-icon"><i class="fa-regular fa-eye"></i></span>Materiais
+            </a>
+            <a href="criar.html" class="sidebar-item">
+                <span class="item-icon"><i class="fa-solid fa-arrow-up-from-bracket"></i></span>Criar
+            </a>
+            <a href="meus-materiais.html" class="sidebar-item">
+                <span class="item-icon"><i class="fa-regular fa-user"></i></span>Perfil
+            </a>
+            <a href="admin.html" id="sidebar-admin-link" class="sidebar-item active">
+                <span class="item-icon"><i class="fa-solid fa-user-tie"></i></span>Admin
+            </a>
+            <a href="sobre.html" class="sidebar-item">
+                <span class="item-icon"><i class="fa-solid fa-circle-info"></i></span>Sobre nós
+            </a>
+            <a href="contato.html" class="sidebar-item">
+                <span class="item-icon"><i class="fa-regular fa-envelope"></i></span>Contato
+            </a>
+        </nav>
+        <div class="sidebar-footer">
+            <button class="sidebar-logged-btn">
+                <i class="fa-solid fa-circle-check"></i> Logado
+            </button>
+            <div class="sidebar-status-box">
+                <div class="sidebar-status-label">Status Atual:</div>
+                <div class="sidebar-status-value">ADMIN</div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- ── NAV ── -->
+    <nav>
+        <div class="nav-left">
+            <label class="nav-hamburger" for="sidebar-toggle" aria-label="Abrir menu">
+                <i class="fa-solid fa-bars"></i>
+            </label>
+            <a class="nav-logo" href="home-logado.html">
+                <div class="nav-logo-icon">M</div>
+                MaterialAtípico
+            </a>
+        </div>
+        <div class="nav-right">
+            <div class="nav-search-wrap">
+                <div class="nav-search-bar">
+                    <i class="fa-solid fa-magnifying-glass nav-search-icon"></i>
+                    <input class="nav-search-input" type="text" placeholder="Buscar materiais..." />
+                    <label class="nav-search-close" for="search-toggle" aria-label="Fechar busca">
+                        <i class="fa-solid fa-xmark"></i>
+                    </label>
+                </div>
+                <label class="nav-icon-btn nav-search-btn-label" for="search-toggle" aria-label="Buscar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </label>
+            </div>
+            <div class="avatar-menu-wrap">
+                <label class="nav-avatar-btn" for="avatar-toggle" aria-label="Perfil">
+                    <i class="fa-solid fa-user"></i>
+                </label>
+                <div class="avatar-dropdown">
+                    <div class="avatar-dropdown-name" id="nav-usuario-nome"></div>
+                    <a href="meus-materiais.html" class="avatar-dropdown-item">
+                        <i class="fa-regular fa-user"></i> Ver perfil
+                    </a>
+                    <a href="configuracoes.html" class="avatar-dropdown-item">
+                        <i class="fa-solid fa-gear"></i> Configurações
+                    </a>
+                    <div class="avatar-dropdown-divider"></div>
+                    <a href="login.html" class="avatar-dropdown-item avatar-dropdown-item--danger">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i> Sair
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+
+        <!-- TOPO -->
+        <section class="topo">
+            <div class="container">
+                <a href="home-logado.html" class="botaoVoltar">
+                    <i class="fa-solid fa-arrow-left"></i> Voltar
+                </a>
+                <div class="topoContent">
+                    <header>
+                        <h1>Painel de Administração</h1>
+                        <p>Gerenciar materiais enviados pela comunidade</p>
+                    </header>
+                    <aside class="topoPendencia">
+                        <span id="topo-pendentes-count">0</span>
+                        <small>Pendentes</small>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <div class="container pageBody">
+
+            <!-- ABAS -->
+            <div class="abasAdmin">
+                <button type="button" class="abaAdminBtn active" id="aba-btn-materiais">Materiais</button>
+                <button type="button" class="abaAdminBtn" id="aba-btn-mensagens">
+                    Mensagens
+                    <span class="badgeNaoLidas" id="badge-mensagens-nao-lidas" hidden></span>
+                </button>
+                <button type="button" class="abaAdminBtn" id="aba-btn-usuarios">
+                    Usuários
+                    <span class="badgeNaoLidas" id="badge-usuarios-count" hidden></span>
+                </button>
+            </div>
+
+            <div id="aba-materiais">
+
+            <!-- ALERTA -->
+            <section class="alerta">
+                <div class="alertaIcone">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                </div>
+                <div>
+                    <strong>Como administrador, você é responsável por revisar e aprovar materiais antes de serem publicados.</strong>
+                    <p>Verifique a qualidade, adequação e relevância de cada material.</p>
+                </div>
+            </section>
+
+            <!--
+                IMPORTANTE: os 4 inputs ficam como irmãos diretos de .filtros e .tableCard
+                dentro do .pageBody. Isso é necessário para o seletor CSS ~ funcionar.
+                Não coloque nenhum elemento pai entre eles.
+            -->
+            <input type="radio" name="filtroAdmin" id="filtroTodos"      class="filtroInput" checked>
+            <input type="radio" name="filtroAdmin" id="filtroPendentes"  class="filtroInput">
+            <input type="radio" name="filtroAdmin" id="filtroAprovados"  class="filtroInput">
+            <input type="radio" name="filtroAdmin" id="filtroRejeitados" class="filtroInput">
+
+            <nav class="filtros">
+                <label for="filtroTodos"      class="filtroBotao" id="label-filtroTodos">Todos (0)</label>
+                <label for="filtroPendentes"  class="filtroBotao" id="label-filtroPendentes">Pendentes (0)</label>
+                <label for="filtroAprovados"  class="filtroBotao" id="label-filtroAprovados">Aprovados (0)</label>
+                <label for="filtroRejeitados" class="filtroBotao" id="label-filtroRejeitados">Rejeitados (0)</label>
+            </nav>
+
+            <div class="tableCard">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Material</th>
+                            <th>Autor</th>
+                            <th>Categoria</th>
+                            <th>Tipo</th>
+                            <th>Data</th>
+                            <th>Status</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody-materiais"></tbody>
+                </table>
+            </div>
+
+            <!-- CRITÉRIOS -->
+            <section class="criteriosCard">
+                <h2>Critérios de Avaliação</h2>
+                <div class="criteriosGrid">
+                    <article>
+                        <h3 class="textGreen">Aprovar quando:</h3>
+                        <ul class="criteriosList criteriosListGreen">
+                            <li><i class="fa-solid fa-check"></i> Material é educativo e adequado para a categoria</li>
+                            <li><i class="fa-solid fa-check"></i> Conteúdo está completo e funcional</li>
+                            <li><i class="fa-solid fa-check"></i> Descrição é clara e informativa</li>
+                            <li><i class="fa-solid fa-check"></i> Não contém erros graves ou informações incorretas</li>
+                        </ul>
+                    </article>
+                    <article>
+                        <h3 class="textRed">Rejeitar quando:</h3>
+                        <ul class="criteriosList criteriosListRed">
+                            <li><i class="fa-solid fa-xmark"></i> Conteúdo inadequado ou ofensivo</li>
+                            <li><i class="fa-solid fa-xmark"></i> Material incompleto ou com erros graves</li>
+                            <li><i class="fa-solid fa-xmark"></i> Categoria ou tipo incorretos</li>
+                            <li><i class="fa-solid fa-xmark"></i> Possível violação de direitos autorais</li>
+                        </ul>
+                    </article>
+                </div>
+            </section>
+
+            <!-- STATUS GRID -->
+            <section class="statusGrid">
+                <article class="statusCard">
+                    <h2 id="status-total">0</h2>
+                    <p>Total de Submissões</p>
+                </article>
+                <article class="statusCard cardYellow">
+                    <h2 id="status-pendentes">0</h2>
+                    <p>Aguardando Análise</p>
+                </article>
+                <article class="statusCard cardGreen">
+                    <h2 id="status-aprovados">0</h2>
+                    <p>Aprovados</p>
+                </article>
+                <article class="statusCard cardRed">
+                    <h2 id="status-rejeitados">0</h2>
+                    <p>Rejeitados</p>
+                </article>
+            </section>
+
+            </div><!-- /aba-materiais -->
+
+            <div id="aba-mensagens" hidden>
+
+                <div class="tableCard">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>De</th>
+                                <th>Assunto</th>
+                                <th>Mensagem</th>
+                                <th>Data</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody-mensagens"></tbody>
+                    </table>
+                </div>
+
+            </div><!-- /aba-mensagens -->
+
+            <div id="aba-usuarios" hidden>
+
+                <div class="tableCard">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Usuário</th>
+                                <th>Email</th>
+                                <th>Tipo</th>
+                                <th>Cadastro</th>
+                                <th>Status</th>
+                                <th>Materiais</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody-usuarios"></tbody>
+                    </table>
+                </div>
+
+            </div><!-- /aba-usuarios -->
+
+            <!-- MODAL PERFIL USUÁRIO -->
+            <div id="modal-perfil-usuario" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.45); z-index:9999; align-items:center; justify-content:center;">
+                <div class="modal-perfil-caixa">
+                    <button class="modal-perfil-fechar" id="modal-perfil-fechar">✕</button>
+                    <div class="modal-perfil-avatar" id="modal-perfil-iniciais"></div>
+                    <h3 id="modal-perfil-nome"></h3>
+                    <p id="modal-perfil-tipo" style="color:#6b7280;font-size:13px;margin-bottom:4px;"></p>
+                    <p id="modal-perfil-email" style="color:#9ca3af;font-size:12px;margin-bottom:16px;"></p>
+                    <p id="modal-perfil-bio" style="font-size:13px;color:#4b5563;line-height:1.6;margin-bottom:16px;"></p>
+                    <div style="display:flex;gap:16px;justify-content:center;font-size:13px;color:#6b7280;">
+                        <div><strong id="modal-perfil-materiais">0</strong><br>Materiais</div>
+                        <div><strong id="modal-perfil-cadastro">—</strong><br>Membro desde</div>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /pageBody -->
+
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a class="nav-logo" href="home-logado.html">
+                    <div class="nav-logo-icon">M</div>
+                    MaterialAtípico
+                </a>
+                <p>Plataforma colaborativa para compartilhamento de materiais atípicos.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Plataforma</h4>
+                <ul>
+                    <li><a href="#">Categorias</a></li>
+                    <li><a href="#">Como Funciona</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Sobre nós</h4>
+                <ul>
+                    <li><a href="#">Nossa Missão</a></li>
+                    <li><a href="#">Comunidade</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Termos de Uso</a></li>
+                    <li><a href="#">Privacidade</a></li>
+                    <li><a href="#">Direitos da Comunidade</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 MaterialAtípico. Construindo uma educação mais inclusiva.
+        </div>
+    </footer>
+
+    <script src="../js/sessao.js"></script>
+    <script src="../js/materiais-store.js"></script>
+    <script src="../js/admin.js"></script>
+</body>
+</html>

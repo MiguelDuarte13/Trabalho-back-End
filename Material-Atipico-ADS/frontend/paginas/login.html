@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MaterialAtípico – Login / Cadastro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/login.css" />
+</head>
+<body>
+<input type="checkbox" id="search-toggle" hidden />
+<label class="search-overlay" for="search-toggle" aria-hidden="true"></label>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="/index.html">
+    <div class="nav-logo-icon">M</div>
+    MaterialAtípico
+  </a>
+  <ul class="nav-links">
+            <li><a href="/index.html">Início</a></li>
+            <li><a href="sobre.html">Sobre nós</a></li>
+            <li><a href="contato.html">Contato</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="nav-search-wrap">
+      <div class="nav-search-bar">
+        <i class="fa-solid fa-magnifying-glass nav-search-icon"></i>
+        <input class="nav-search-input" type="text" placeholder="Buscar materiais..." />
+        <label class="nav-search-close" for="search-toggle" aria-label="Fechar busca">
+          <i class="fa-solid fa-xmark"></i>
+        </label>
+      </div>
+      <label class="nav-search-btn-label" for="search-toggle" aria-label="Buscar">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </label>
+    </div>
+    <a class="btn-login" href="login.html">Login / Cadastro</a>
+  </div>
+</nav>
+
+<!-- BODY -->
+<div class="page-body">
+  <a class="back-link" href="/index.html">
+    <i class="fa-solid fa-arrow-left"></i>
+    Voltar para Home
+  </a>
+
+  <div class="auth-card">
+    <div class="card-logo">
+      <div class="logo-icon-big">M</div>
+      <h2>MaterialAtípico</h2>
+      <p>Acesse sua conta ou crie uma nova</p>
+    </div>
+
+    <!--
+      TÉCNICA CSS PURO:
+      Dois radio buttons invisíveis controlam qual painel aparece.
+      O :checked no CSS ativa o painel correspondente.
+      O "for" no label conecta o clique ao radio correto.
+    -->
+    <input type="radio" name="tab" id="radio-login" hidden checked />
+    <input type="radio" name="tab" id="radio-cadastro" hidden />
+
+    <div class="tabs">
+      <label class="tab-btn" for="radio-login">Login</label>
+      <label class="tab-btn" for="radio-cadastro">Cadastro</label>
+    </div>
+
+    <!-- LOGIN -->
+    <div class="form-panel" id="panel-login">
+      <div class="field">
+        <label for="login-email">Email</label>
+        <div class="input-wrap">
+          <i class="fa-regular fa-envelope"></i>
+          <input type="email" id="login-email" placeholder="seu@email.com" />
+        </div>
+      </div>
+      <div class="field">
+        <label for="login-senha">Senha</label>
+        <div class="input-wrap">
+          <i class="fa-solid fa-lock"></i>
+          <input type="password" id="login-senha" placeholder="••••••••" />
+        </div>
+      </div>
+      <div class="row-remember">
+        <label class="checkbox-label">
+          <input type="checkbox" /> Lembrar-me
+        </label>
+        <a class="link-purple" href="#">Esqueci minha senha</a>
+      </div>
+      <div id="msg-login" class="form-msg" hidden></div>
+      <button id="btn-login" class="btn-submit">Entrar</button>
+    </div>
+
+    <!-- CADASTRO -->
+    <div class="form-panel" id="panel-cadastro">
+      <div class="field">
+        <label for="cad-nome">Nome Completo</label>
+        <div class="input-wrap">
+          <i class="fa-solid fa-user"></i>
+          <input type="text" id="cad-nome" placeholder="Seu nome" required/>
+        </div>
+      </div>
+      <div class="field">
+        <label for="cad-email">Email</label>
+        <div class="input-wrap">
+          <i class="fa-regular fa-envelope"></i>
+          <input type="email" id="cad-email" placeholder="seu@email.com" required/>
+        </div>
+      </div>
+      <div class="field">
+        <label for="cad-senha">Senha</label>
+        <div class="input-wrap">
+          <i class="fa-solid fa-lock"></i>
+          <input type="password" id="cad-senha" placeholder="••••••••" required/>
+        </div>
+      </div>
+      <div class="field">
+        <label for="cad-confirma">Confirmar Senha</label>
+        <div class="input-wrap">
+          <i class="fa-solid fa-lock"></i>
+          <input type="password" id="cad-confirma" placeholder="••••••••" required/>
+        </div>
+      </div>
+      <div class="field">
+        <label for="cad-tipo">Tipo de Usuário</label>
+        <select class="standalone" id="cad-tipo">
+          <option value="" disabled selected>Selecione...</option>
+          <option>Educador</option>
+          <option>Familiar / Responsável</option>
+          <option>Terapeuta</option>
+          <option>Estudante</option>
+          <option>Outro</option>
+        </select>
+      </div>
+      <div class="row-terms">
+        <input type="checkbox" id="termos" />
+        <label for="termos">
+          Aceito os <a class="link-purple" href="#">termos de uso e política de privacidade</a>
+        </label>
+      </div>
+      <div id="msg-cadastro" class="form-msg" hidden></div>
+      <button id="btn-cadastro" class="btn-submit">Criar Conta</button>
+    </div>
+
+  </div>
+
+  <div class="card-bottom">
+    Não tem uma conta? <label for="radio-cadastro">Cadastre-se</label>
+  </div>
+</div>
+
+<script src="/js/sessao.js"></script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

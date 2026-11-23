@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sobre Nós – MaterialAtípico</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/home-logado.css" />
+    <link rel="stylesheet" href="../css/sobre.css" />
+</head>
+<body>
+
+
+<main class ="sobremain">
+        <input type="checkbox" id="sidebar-toggle" hidden />
+        <input type="checkbox" id="search-toggle" hidden />
+    <label class="search-overlay" for="search-toggle" aria-hidden="true"></label>
+        <input type="checkbox" id="avatar-toggle" hidden />
+        <label class="avatar-overlay" for="avatar-toggle" aria-hidden="true"></label>
+        <label class="sidebar-overlay" for="sidebar-toggle" aria-hidden="true"></label>
+
+    <!-- ── HEADER LOGADO (sidebar + avatar) — só aparece com sessão ativa ── -->
+        <aside class="sidebar" id="sidebar-logado" style="display:none">
+            <div class="sidebar-header">
+                <span class="sidebar-title">Menu</span>
+                <label class="sidebar-close" for="sidebar-toggle" aria-label="Fechar menu">
+                    <i class="fa-solid fa-xmark"></i>
+                </label>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="home-logado.html" class="sidebar-item">
+                    <span class="item-icon"><i class="fa-solid fa-house"></i></span>
+                    Home
+                </a>
+                <a href="material.html" class="sidebar-item">
+                    <span class="item-icon"><i class="fa-regular fa-eye"></i></span>
+                    Materiais
+                </a>
+                <a href="criar.html" class="sidebar-item">
+                    <span class="item-icon"><i class="fa-solid fa-arrow-up-from-bracket"></i></span>
+                    Criar
+                </a>
+                <a href="meus-materiais.html" class="sidebar-item">
+                    <span class="item-icon"><i class="fa-regular fa-user"></i></span>
+                    Perfil
+                </a>
+                <a href="admin.html" id="sidebar-admin-link" class="sidebar-item">
+                    <span class="item-icon"><i class="fa-solid fa-user-tie"></i></span>
+                    Admin
+                </a>
+                <a href="sobre.html" class="sidebar-item active">
+                    <span class="item-icon"><i class="fa-solid fa-circle-info"></i></span>
+                    Sobre nós
+                </a>
+                <a href="contato.html" class="sidebar-item">
+                    <span class="item-icon"><i class="fa-regular fa-envelope"></i></span>
+                    Contato
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <button class="sidebar-logged-btn">
+                    <i class="fa-solid fa-circle-check"></i>
+                    Logado
+                </button>
+                <div class="sidebar-status-box">
+                    <div class="sidebar-status-label">Status Atual:</div>
+                    <div class="sidebar-status-value">SOBRE</div>
+                </div>
+            </div>
+        </aside>
+
+        <nav id="nav-logado" style="display:none">
+            <div class="nav-left">
+                <label class="nav-hamburger" for="sidebar-toggle" aria-label="Abrir menu">
+                    <i class="fa-solid fa-bars"></i>
+                </label>
+                <a class="nav-logo" href="home-logado.html">
+                    <div class="nav-logo-icon">M</div>
+                    MaterialAtípico
+                </a>
+            </div>
+            <div class="nav-right">
+                <div class="avatar-menu-wrap">
+                    <label class="nav-avatar-btn" for="avatar-toggle" aria-label="Perfil">
+                        <i class="fa-solid fa-user"></i>
+                    </label>
+                    <div class="avatar-dropdown">
+                        <div class="avatar-dropdown-name" id="nav-usuario-nome"></div>
+                        <a href="meus-materiais.html" class="avatar-dropdown-item">
+                            <i class="fa-regular fa-user"></i>
+                            Ver perfil
+                        </a>
+                        <a href="configuracoes.html" class="avatar-dropdown-item">
+                            <i class="fa-solid fa-gear"></i>
+                            Configurações
+                        </a>
+                        <div class="avatar-dropdown-divider"></div>
+                        <a href="login.html" class="avatar-dropdown-item avatar-dropdown-item--danger">
+                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                            Sair
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+    <!-- ── HEADER PÚBLICO — só aparece sem sessão ativa ── -->
+    <nav id="nav-publico">
+        <a class="nav-logo" href="/index.html">
+            <div class="nav-logo-icon">M</div>
+            MaterialAtípico
+        </a>
+        <ul class="nav-links">
+            <li><a href="/index.html">Início</a></li>
+            <li><a href="sobre.html">Sobre nós</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+        <div class="nav-right">
+            <div class="nav-search-wrap">
+                <div class="nav-search-bar">
+                    <i class="fa-solid fa-magnifying-glass nav-search-icon"></i>
+                    <input class="nav-search-input" type="text" placeholder="Buscar materiais..." />
+                    <label class="nav-search-close" for="search-toggle" aria-label="Fechar busca">
+                        <i class="fa-solid fa-xmark"></i>
+                    </label>
+                </div>
+                <label class="nav-search-btn-label" for="search-toggle" aria-label="Buscar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </label>
+            </div>
+            <a class="btn-login" href="login.html">Login / Cadastro</a>
+        </div>
+    </nav>
+
+  <!-- VOLTAR -->
+  <a href="/index.html" class="voltar" data-home-link>
+    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path d="M19 12H5M12 5l-7 7 7 7"/>
+    </svg>
+    Voltar
+  </a>
+ 
+  <!-- SOBRE NÓS -->
+  <div class="sobre-card">
+    <h1>Sobre Nós</h1>
+    <p>Somos uma plataforma colaborativa dedicada a facilitar o acesso e compartilhamento de materiais educacionais adaptados para crianças e jovens com necessidades atípicas.</p>
+    <p>Nascemos da necessidade real de educadores e famílias que buscavam recursos pedagógicos de qualidade para diferentes perfis de aprendizagem.</p>
+  </div>
+ 
+  <!-- MISSÃO -->
+  <section class="missao-section">
+    <h2 class="section-title">Nossa Missão</h2>
+    <div class="missao-card">
+      <p>Democratizar o acesso a materiais educacionais de qualidade, criando uma ponte entre educadores, terapeutas e famílias que compartilham o compromisso com a educação inclusiva e o desenvolvimento pleno de cada criança.</p>
+    </div>
+  </section>
+ 
+  <!-- VALORES -->
+  <section class="valores-section">
+    <h2 class="section-title">Nossos Valores</h2>
+    <p class="section-sub">O que nos guia todos os dias</p>
+    <div class="valores-grid">
+ 
+      <div class="valor-card">
+        <div class="valor-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </div>
+        <div>
+          <h3>Inclusão</h3>
+          <p>Acreditamos que toda criança merece acesso a materiais educacionais adaptados às suas necessidades.</p>
+        </div>
+      </div>
+ 
+      <div class="valor-card">
+        <div class="valor-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <div>
+          <h3>Colaboração</h3>
+          <p>Construímos juntos uma comunidade onde educadores e famílias compartilham experiências e recursos.</p>
+        </div>
+      </div>
+ 
+      <div class="valor-card">
+        <div class="valor-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+        </div>
+        <div>
+          <h3>Qualidade</h3>
+          <p>Garantimos que todos os materiais passem por análise para manter alto padrão pedagógico.</p>
+        </div>
+      </div>
+ 
+      <div class="valor-card">
+        <div class="valor-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/>
+            <line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/>
+            <line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/>
+            <line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/>
+            <line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/>
+            <line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/>
+          </svg>
+        </div>
+        <div>
+          <h3>Inovação</h3>
+          <p>Buscamos constantemente novas formas de facilitar o acesso à educação inclusiva.</p>
+        </div>
+      </div>
+ 
+    </div>
+  </section>
+ 
+  <!-- EQUIPE -->
+  <section class="equipe-section">
+    <h2 class="section-title">Nossa Equipe</h2>
+    <p class="section-sub">Profissionais apaixonados por educação inclusiva</p>
+    <div class="equipe-grid">
+ 
+      <div class="membro-card">
+        <div class="avatar"></div>
+        <h3>Maria Silva</h3>
+        <p class="membro-cargo">Fundadora &amp; Educadora</p>
+        <p>Especialista em educação inclusiva com 15 anos de experiência</p>
+      </div>
+ 
+      <div class="membro-card">
+        <div class="avatar"></div>
+        <h3>João Santos</h3>
+        <p class="membro-cargo">Coordenador Pedagógico</p>
+        <p>Professor com foco em necessidades especiais</p>
+      </div>
+ 
+      <div class="membro-card">
+        <div class="avatar"></div>
+        <h3>Ana Costa</h3>
+        <p class="membro-cargo">Designer UX</p>
+        <p>Apaixonada por criar experiências acessíveis</p>
+      </div>
+ 
+    </div>
+  </section>
+ 
+  <!-- IMPACTO -->
+  <section class="impacto-section">
+    <h2>Nosso Impacto</h2>
+    <div class="impacto-stats">
+      <div class="stat">
+        <div class="stat-num">540+</div>
+        <div class="stat-label">Materiais Disponíveis</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">1.2K+</div>
+        <div class="stat-label">Educadores Ativos</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">3.5K+</div>
+        <div class="stat-label">Downloads Mensais</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">98%</div>
+        <div class="stat-label">Satisfação</div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- CTA — escondido por sobre.js quando usuário está logado -->
+  <section class="cta-section" id="cta-section">
+    <h2>Faça Parte Dessa Missão</h2>
+    <p>Juntos, construímos uma educação mais inclusiva</p>
+    <a href="login.html"><button class="btn-cta">Criar Conta Grátis</button></a>
+  </section>
+</main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a class="nav-logo" href="index.html" data-home-link>
+                    <div class="nav-logo-icon">M</div>
+                    MaterialAtípico
+                </a>
+                <p>Plataforma colaborativa para compartilhamento de materiais atípicos.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Plataforma</h4>
+                <ul>
+                    <li><a href="#">Categorias</a></li>
+                    <li><a href="#">Como Funciona</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Sobre nós</h4>
+                <ul>
+                    <li><a href="#">Nossa Missão</a></li>
+                    <li><a href="#">Comunidade</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Termos de Uso</a></li>
+                    <li><a href="#">Privacidade</a></li>
+                    <li><a href="#">Direitos da Comunidade</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 MaterialAtípico. Construindo uma educação mais inclusiva.
+        </div>
+    </footer>
+
+    <script src="../js/sessao.js"></script>
+    <script src="../js/header-toggle.js"></script>
+    <script src="../js/sobre.js"></script>
+</body>
+</html>

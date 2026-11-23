@@ -1,0 +1,12 @@
+{
+  "nome": "Maria Silva",
+  "email": "maria.silva@email.com",
+  "tipo": "Educador",
+  "biografia": "",
+  "criadoEm": "2026-11-23T20:10:00.000Z",
+  "notificacoes": {
+    "materialAprovado": true,
+    "novasAvaliacoes": true,
+    "newsletter": false
+  }
+}
