@@ -8,44 +8,44 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const membros = [
         {
-            nome: "Lucas Stefanon",
-            cargo: "Desenvolvedor Full-Stack",
+            nome: "Izabelle Lopes",
+            cargo: "Estudante de ADS",
             descricao: "Responsável pela arquitetura e integração do sistema.",
             imagem: "../images/lucasstefanon.png"
         },
         {
-            nome: "Amanda Jeni",
-            cargo: "Desenvolvedora Front-End",
+            nome: "Miguel Duarte",
+            cargo: "Estudante de ADS",
             descricao: "Focada em acessibilidade e experiência do usuário.",
             imagem: "../images/Amanda.jpeg"
         },
         {
-            nome: "Nayara Fonseca",
-            cargo: "Desenvolvedora",
+            nome: "Miguel Ferreira",
+            cargo: "Estudante de ADS",
             descricao: "Especialista em construção de interfaces inclusivas.",
-            imagem: "../images/nayara.jpeg"
+            imagem: "../images/MiguelFerreira.jpeg"
         },
         {
-            nome: "João Vitor",
-            cargo: "Desenvolvedor",
+            nome: "Rafaela Aquino",
+            cargo: "Estudante de ADS",
             descricao: "Apaixonado por tecnologia aplicada à educação.",
             imagem: "../images/Joao.jpeg"
         },
         {
             nome: "Miguel Ferreira",
-            cargo: "Desenvolvedor Front-End",
+            cargo: "Estudante de ADS",
             descricao: "Responsável pela experiência visual da plataforma.",
             imagem: "../images/MiguelFerreira.jpeg"
         },
         {
             nome: "Rafaela Aquino",
-            cargo: "Desenvolvedora",
+            cargo: "Estudante de ADS",
             descricao: "Criadora de soluções pedagógicas digitais.",
             imagem: "../images/rafaela.jpeg"
         },
         {
-            nome: "Miguel Duarte",
-            cargo: "Desenvolvedor",
+            nome: "Rayssa Fernandes",
+            cargo: "Estudante de ADS",
             descricao: "Contribui com recursos e funcionalidades da plataforma.",
             imagem: "../images/MiguelDuarte.jpeg"
         }
